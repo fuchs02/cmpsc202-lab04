@@ -78,11 +78,11 @@ Name: Kallan Fuchs
 
  **Answer**: Cubic time complexity, $\mathcal{O}(n^3)$
 
-**Justification**:
+**Justification**: each time the imput doubled the ouput increased by 8 times meaning the function is $\mathcal{O}(n^3)$
 
  2. Two students write separate algorithms to compute a metric over an array of 10 million integers. Both algorithms perform exactly one mathematical operation per element, meaning both have a theoretical time complexity of $O(N)$. However, during benchmarking, Algorithm A consistently runs 15x faster than Algorithm B. Why might theoretical Big-O analysis fail to predict this massive performance gap? 
 
-**Answer**:
+**Answer**: Big-O analysis might fail to account for this as it doesn't take into account constants meaning if oneof the two included a a large constant multiple or addition it may take far longer then the other
 
  3. Scenario: To measure the running time of algorithms for an empirical comparison, a developer writes the following benchmarking script:
 
@@ -99,7 +99,7 @@ print("Time:", end - start)
 
 They run this script exactly once for each algorithm on their laptop while streaming a movie in the background. Identify at least three distinct methodological flaws in this benchmarking setup that make the results unreliable.
 
-**Answer**:
+**Answer**: Streaming a movie in the background serves as background processes whcihc could causes changes to the functions run times. 
 
 ## Pseudocode
 
@@ -112,7 +112,8 @@ for i = 1 to N do
         do_work()
 ```
 
-Write a closed-form expression for the number of times `do_work()` is called in terms of $N$.
+Write a closed-form expression for the number of times `do_work()` is called in terms of $N$. 
+T(n) = N^2
 
 2. Analyze the exact number of times the `do_work()` function is called in the following pseudocode, assuming $N \ge 1$.
 
@@ -128,7 +129,7 @@ If $N=16$, how many times is `do_work()` called?
 
 **Answer**: 31
 
-**Justification**:
+**Justification**: It runs 31 times because it divides 16 and rounds to the nearest whole number until i = 0 meaning it keeps running do_work() i times each time it divides starting with 16 then halving each run. It takes 6 divisions to get to 0 so do_work() runs 16,8,4,2,1
 
 ## Greedy Algorithms
 
@@ -144,4 +145,4 @@ Which of these three strategies guarantees an optimal solution (maximum number o
 
 **Answer**: The earliest finish strategy guarantees an optimal solution.
 
-**Justification**:
+**Justification**: The earlisest finish strategy works every time as you get out the soonest allowing for the optimal number of films to view. Shortest first conflicts when given that the shortest film stats later the films that may get out earlier, the earlist film strategy can fail when the film that starts first is long leading to a lower number of films attended. 

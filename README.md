@@ -6,33 +6,37 @@ This lab reviews the foundational concepts of algorithms and data structures tha
 
 **Topics:** asymptotic analysis, data structures, empirical comparison of algorithms, pseudocode, greedy algorithms. 
 
+Name: Kallan Fuchs
+
 ## Asymptotic Analysis
 
 1. Use the rules from lecture 07 to prove that $T(n) = 5 \log n + 7n$ is $\mathcal{O}(n)$.
+
+**Answer**: droping multipliticve constants you're left with $T(n) = \log n + n$, n being bigger then log n proves the function is $\mathcal{O}(n)$
 
 2. True/False/Possibly: $T(n)$ is $\mathcal{O}(n^2)$?
 
 **Answer**: Yes
 
-**Justification**:
+**Justification**: $\mathcal{O}(n^2)$ is an upper bount of $T(n)$ because it grows linearly while $\mathcal{O}(n^2)$ grows at a constant faster rate meaning it wil always be an upper bound
 
 3. True/False/Possibly: $T(n)$ is $\Omega(n \log n)$?
 
 **Answer**: No
 
-**Justification**:
+**Justification**: $\Omega(n \log n)$ grows faster then just $\mathcal{O}(n)$ meaning that is not a lower bound to $T(n)$
 
 4. For any algorithm, we can give a trivial lower bound. What is that lower bound?
 
 **Answer**: $\Omega(1)$
 
-**Justification**:
+**Justification**: $\Omega(1)$ doesn't grow as it runs at a constant rate meaning any function will be lower bounded by $\Omega(1)$
 
 5. Is there a corresponding trivial upper bound? Why or why not?
 
 **Answer**: No
 
-**Justification**:
+**Justification**: There is no trivial upper bound as exponentials can infintly grow at larger rates by simply adding another exponent of n
 
 
 ## Data Structures
@@ -41,25 +45,25 @@ This lab reviews the foundational concepts of algorithms and data structures tha
 
 **Answer**: Stack
 
-**Justification**:
+**Justification**: This is the fastest strucute as it only works by appending and removing from the end of list which are both constant time functions causing the fastes algorithm
 
 2. A server receives a massive influx of data packets from a streaming video application. To prevent the video from skipping or playing out of order on the user's end, the server must process and forward these packets in the exact sequence they were received.
 
 **Answer**: Queue
 
-**Justification**:
+**Justification**: A queue moves from a point following a first in first out order pointing to the next value forcing the algoritim to follow the order in exact sequence
 
 3. An atmospheric monitoring system reads temperature data from 10,000 sequentially numbered sensors (IDs 0 through 9999). Throughout the day, the system needs to constantly update and read the current temperature of randomly selected sensors based on their ID number to build localized weather maps.
 
 **Answer**: Array
 
-**Justification**:
+**Justification**: An array can call upon a given value using its index as a constant time algoritim allowing it to be the most effecient in the situation
 
 4. You are building a lightweight syntax checker for a code editor. Its sole job is to scan a document and ensure that every opened parenthesis `(`, bracket `[`, and brace `{` is matched with its corresponding closing character in the correct nested order.
 
 **Answer**: Stack
 
-**Justification**:
+**Justification**: A stack works via pushing every opened symbole to a stack meaning the last in will be the first in the stack, then by checking the closed symbols you can compare them to the first item in the stack using a constant time function
 
 ## Empirical Comparison of Algorithms
 
